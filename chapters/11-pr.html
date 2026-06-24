@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pull Request - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>11. Pull Request</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">🔄</span>
+        <div>Pull Request（PR）是代码审查的核心，也是团队协作的关键流程！</div>
+      </div>
+      
+      <h2>什么是Pull Request？</h2>
+      <p>PR是请求把你的代码合并到主分支的申请，让团队成员可以：</p>
+      <ul>
+        <li>审查你的代码</li>
+        <li>提出修改建议</li>
+        <li>讨论实现方案</li>
+        <li>确保代码质量</li>
+      </ul>
+      
+      <h2>创建PR的流程</h2>
+      
+      <ol class="steps">
+        <li>在本地创建并切换到新分支</li>
+        <li>开发功能并提交代码</li>
+        <li>推送到GitHub</li>
+        <li>在GitHub上点击"New pull request"</li>
+        <li>填写标题和描述，选择要合并的分支</li>
+        <li>点击"Create pull request"</li>
+      </ol>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 创建分支并开发
+git checkout -b feature-login
+# ... 修改代码 ...
+git add .
+git commit -m "添加登录功能"
+
+# 推送到GitHub
+git push -u origin feature-login</code></pre>
+      </div>
+      
+      <h2>代码审查</h2>
+      <p>团队成员可以在PR中：</p>
+      <ul>
+        <li>查看代码变更</li>
+        <li>添加评论和建议</li>
+        <li>请求修改或批准</li>
+        <li>最终合并到主分支</li>
+      </ul>
+      
+      <div class="key-point">
+        <h3>PR最佳实践</h3>
+        <p>1. 每个PR只做一件事<br>2. 写清楚PR描述<br>3. 关联相关Issue<br>4. 及时回复审查意见</p>
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="pr">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="10-issue.html">← 上一章：Issue管理</a>
+      <a href="12-pages.html">下一章：GitHub Pages →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

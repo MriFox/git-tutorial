@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基本操作 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>3. 基本操作</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">⚡</span>
+        <div>掌握这几个命令，你就能开始用Git管理代码了！</div>
+      </div>
+      
+      <h2>初始化仓库</h2>
+      <p>把一个文件夹变成Git仓库：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 进入项目文件夹
+cd my-project
+
+# 初始化Git仓库
+git init</code></pre>
+      </div>
+      
+      <h2>查看状态</h2>
+      <p>查看哪些文件被修改了：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code>git status</code></pre>
+      </div>
+      
+      <p>输出说明：</p>
+      <ul>
+        <li><span style="color: #22c55e;">绿色</span> - 已暂存，准备提交</li>
+        <li><span style="color: #ef4444;">红色</span> - 已修改，未暂存</li>
+        <li>Untracked - 新文件，未被Git跟踪</li>
+      </ul>
+      
+      <h2>添加到暂存区</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 添加指定文件
+git add filename.txt
+
+# 添加所有修改
+git add .
+
+# 添加所有txt文件
+git add *.txt</code></pre>
+      </div>
+      
+      <h2>提交到仓库</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 提交并添加描述
+git commit -m "描述你做了什么修改"
+
+# 示例
+git commit -m "添加了登录功能"</code></pre>
+      </div>
+      
+      <div class="key-point">
+        <h3>提交信息规范</h3>
+        <p>好的提交信息应该简洁明了，说明"做了什么"而不是"怎么做的"</p>
+      </div>
+      
+      <h2>查看历史</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 查看提交历史
+git log
+
+# 简洁显示
+git log --oneline</code></pre>
+      </div>
+      
+      <h2>常用命令速查</h2>
+      
+      <table style="width:100%; border-collapse:collapse; margin:20px 0;">
+        <tr style="background:#f1f5f9;">
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">命令</th>
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">作用</th>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git init</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">初始化仓库</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git status</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">查看状态</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git add</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">添加到暂存区</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git commit</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">提交到仓库</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git log</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">查看历史</td>
+        </tr>
+      </table>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="commands">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="02-basics.html">← 上一章：Git基础概念</a>
+      <a href="04-branch.html">下一章：分支管理 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

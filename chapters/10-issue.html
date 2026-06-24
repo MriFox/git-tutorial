@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue管理 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>10. Issue管理</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">📋</span>
+        <div>Issue是GitHub的"任务清单"，帮你跟踪bug、功能需求和讨论！</div>
+      </div>
+      
+      <h2>什么是Issue？</h2>
+      <p>Issue是用来追踪项目中的问题、功能请求或任务的工具：</p>
+      <ul>
+        <li><strong>Bug报告</strong> - 发现了代码错误</li>
+        <li><strong>功能请求</strong> - 希望添加新功能</li>
+        <li><strong>任务</strong> - 需要完成的工作</li>
+        <li><strong>讨论</strong> - 关于项目的讨论</li>
+      </ul>
+      
+      <h2>创建Issue</h2>
+      
+      <ol class="steps">
+        <li>在仓库页面点击"Issues"标签</li>
+        <li>点击"New issue"</li>
+        <li>填写标题和描述</li>
+        <li>点击"Submit new issue"</li>
+      </ol>
+      
+      <h2>标签管理</h2>
+      <p>用标签给Issue分类：</p>
+      
+      <table style="width:100%; border-collapse:collapse; margin:20px 0;">
+        <tr style="background:#f1f5f9;">
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">标签</th>
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">用途</th>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><span style="background:#ef4444;color:white;padding:2px 8px;border-radius:4px;">bug</span></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">标记bug</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><span style="background:#22c55e;color:white;padding:2px 8px;border-radius:4px;">enhancement</span></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">功能增强</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:4px;">documentation</span></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">文档相关</td>
+        </tr>
+      </table>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="issue">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="09-readme.html">← 上一章：README与LICENSE</a>
+      <a href="11-pr.html">下一章：Pull Request →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安装Git - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>1. 安装Git</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">🎉</span>
+        <div>恭喜你迈出第一步！安装Git就像给你的电脑装上"时间机器"，让你的代码可以随时回到过去！</div>
+      </div>
+      
+      <h2>什么是Git？</h2>
+      <p>Git是一个版本控制系统，它可以：</p>
+      <ul>
+        <li>记录代码的每一次修改</li>
+        <li>让你随时回到之前的版本</li>
+        <li>多人同时修改同一个项目</li>
+        <li>管理项目的不同版本（分支）</li>
+      </ul>
+      
+      <div class="key-point">
+        <h3>简单理解：Git = 代码的"后悔药"</h3>
+        <p>改错了？没关系，Git帮你回到之前的状态！</p>
+      </div>
+      
+      <h2>Windows安装</h2>
+      
+      <ol class="steps">
+        <li>访问 https://git-scm.com/download/win 下载安装包</li>
+        <li>运行安装程序，一路点击"Next"即可</li>
+        <li>安装完成后，右键桌面空白处，看到"Git Bash Here"就成功了</li>
+      </ol>
+      
+      <div class="tip">
+        💡 安装时建议选择默认选项，特别是要勾选"Add to PATH"（通常默认已勾选）。
+      </div>
+      
+      <h2>Mac安装</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 方法1：使用Homebrew（推荐）
+brew install git
+
+# 方法2：安装Xcode Command Line Tools
+xcode-select --install</code></pre>
+      </div>
+      
+      <h2>Linux安装</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># Ubuntu/Debian
+sudo apt install git
+
+# CentOS/RHEL
+sudo yum install git</code></pre>
+      </div>
+      
+      <h2>验证安装</h2>
+      
+      <p>打开终端（Windows打开Git Bash），输入：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code>git --version</code></pre>
+      </div>
+      
+      <p>如果显示版本号（如 <code>git version 2.45.0</code>），说明安装成功！</p>
+      
+      <h2>配置用户信息</h2>
+      
+      <p>安装完成后，先配置你的身份信息：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 配置用户名
+git config --global user.name "你的名字"
+
+# 配置邮箱
+git config --global user.email "你的邮箱@example.com"</code></pre>
+      </div>
+      
+      <div class="warning">
+        ⚠️ 这里的邮箱最好和你注册GitHub时使用的邮箱一致！
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="install">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <span></span>
+      <a href="02-basics.html">下一章：Git基础概念 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

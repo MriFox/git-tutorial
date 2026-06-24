@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git基础概念 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>2. Git基础概念</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">📚</span>
+        <div>学开车前要先认识方向盘和油门，学Git也要先认识这些核心概念！</div>
+      </div>
+      
+      <h2>仓库（Repository）</h2>
+      <p>仓库就是Git管理的项目文件夹。每个Git仓库都包含：</p>
+      <ul>
+        <li><strong>.git文件夹</strong> - 存储所有版本历史</li>
+        <li><strong>工作区</strong> - 你看到和编辑的文件</li>
+        <li><strong>暂存区</strong> - 准备提交的文件</li>
+      </ul>
+      
+      <div class="dialog-box">
+        <div class="line">仓库就像一个"文件保险箱"，Git在背后帮你记录每一次修改！</div>
+      </div>
+      
+      <h2>提交（Commit）</h2>
+      <p>提交是保存代码修改的操作。每次提交都会：</p>
+      <ul>
+        <li>记录修改了什么内容</li>
+        <li>记录谁修改的</li>
+        <li>记录什么时候修改的</li>
+        <li>添加一段描述信息</li>
+      </ul>
+      
+      <div class="key-point">
+        <h3>提交 = 给代码拍"快照"</h3>
+        <p>每次提交都是项目在那个时刻的完整状态！</p>
+      </div>
+      
+      <h2>分支（Branch）</h2>
+      <p>分支是平行的开发线路。你可以：</p>
+      <ul>
+        <li>在主分支（main/master）上保持稳定代码</li>
+        <li>创建新分支开发新功能</li>
+        <li>开发完成后合并回主分支</li>
+      </ul>
+      
+      <div class="dialog-box">
+        <div class="line">分支就像"平行宇宙"，你在分支上的修改不会影响主分支！</div>
+      </div>
+      
+      <h2>远程仓库（Remote）</h2>
+      <p>远程仓库是托管在服务器上的仓库（如GitHub），用于：</p>
+      <ul>
+        <li>备份代码</li>
+        <li>多人协作</li>
+        <li>分享代码</li>
+      </ul>
+      
+      <h2>工作流程</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code>工作区 → 暂存区 → 仓库 → 远程仓库
+ (编辑)   (add)   (commit)   (push)</code></pre>
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="basics">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="01-install.html">← 上一章：安装Git</a>
+      <a href="03-commands.html">下一章：基本操作 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

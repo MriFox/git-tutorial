@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分支管理 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>4. 分支管理</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">🌿</span>
+        <div>分支是Git最强大的功能！它让你可以同时开发多个功能而互不干扰。</div>
+      </div>
+      
+      <h2>查看分支</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 查看所有分支
+git branch
+
+# 带*号的是当前分支
+* main</code></pre>
+      </div>
+      
+      <h2>创建分支</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 创建新分支
+git branch feature-login
+
+# 创建并切换到新分支
+git checkout -b feature-login
+
+# 新语法（推荐）
+git switch -c feature-login</code></pre>
+      </div>
+      
+      <h2>切换分支</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 切换到指定分支
+git checkout main
+
+# 新语法（推荐）
+git switch main</code></pre>
+      </div>
+      
+      <h2>合并分支</h2>
+      <p>开发完成后，把分支合并回主分支：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 先切换到主分支
+git checkout main
+
+# 合并feature分支
+git merge feature-login</code></pre>
+      </div>
+      
+      <h2>删除分支</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 删除已合并的分支
+git branch -d feature-login
+
+# 强制删除未合并的分支
+git branch -D feature-login</code></pre>
+      </div>
+      
+      <div class="key-point">
+        <h3>分支工作流</h3>
+        <p>1. 在main分支上保持稳定代码<br>2. 开发新功能时创建新分支<br>3. 开发完成后合并回main<br>4. 合并后删除已无用的分支</p>
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="branch">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="03-commands.html">← 上一章：基本操作</a>
+      <a href="05-remote.html">下一章：远程操作 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

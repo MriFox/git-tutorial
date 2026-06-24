@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fork与协作 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>13. Fork与协作</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">🍴</span>
+        <div>Fork是参与开源项目的起点，让你可以在别人的项目上自由修改！</div>
+      </div>
+      
+      <h2>什么是Fork？</h2>
+      <p>Fork是把别人的仓库复制一份到你自己的GitHub账号下，这样你可以：</p>
+      <ul>
+        <li>自由修改代码</li>
+        <li>不影响原项目</li>
+        <li>提交PR贡献给原项目</li>
+      </ul>
+      
+      <h2>参与开源项目的流程</h2>
+      
+      <ol class="steps">
+        <li>Fork原项目到你的账号</li>
+        <li>Clone你的Fork到本地</li>
+        <li>创建新分支开发功能</li>
+        <li>提交代码并推送到你的Fork</li>
+        <li>在GitHub上创建PR到原项目</li>
+        <li>等待原作者审查和合并</li>
+      </ol>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 克隆你的Fork
+git clone https://github.com/你的用户名/原项目名.git
+
+# 添加原项目为upstream
+git remote add upstream https://github.com/原作者/原项目名.git
+
+# 同步原项目的更新
+git fetch upstream
+git merge upstream/main</code></pre>
+      </div>
+      
+      <div class="key-point">
+        <h3>开源贡献礼仪</h3>
+        <p>1. 先阅读项目的CONTRIBUTING.md<br>2. 从简单的Issue开始（如good first issue）<br>3. 遵循项目的代码风格<br>4. 保持PR小而专注</p>
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="fork">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="12-pages.html">← 上一章：GitHub Pages</a>
+      <a href="14-english.html">下一章：必备英语 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

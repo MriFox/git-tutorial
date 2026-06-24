@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>远程操作 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>5. 远程操作</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">☁️</span>
+        <div>本地的代码需要推送到云端备份和分享，这就是远程操作！</div>
+      </div>
+      
+      <h2>添加远程仓库</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 添加远程仓库（通常命名为origin）
+git remote add origin https://github.com/用户名/仓库名.git
+
+# 查看远程仓库
+git remote -v</code></pre>
+      </div>
+      
+      <h2>推送到远程</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 首次推送（设置上游分支）
+git push -u origin main
+
+# 之后推送
+git push</code></pre>
+      </div>
+      
+      <h2>从远程拉取</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 拉取远程更新
+git pull
+
+# 只下载不合并
+git fetch</code></pre>
+      </div>
+      
+      <h2>克隆仓库</h2>
+      <p>下载别人的项目到本地：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 克隆远程仓库
+git clone https://github.com/用户名/仓库名.git
+
+# 克隆到指定文件夹
+git clone https://github.com/用户名/仓库名.git my-folder</code></pre>
+      </div>
+      
+      <h2>常用命令速查</h2>
+      
+      <table style="width:100%; border-collapse:collapse; margin:20px 0;">
+        <tr style="background:#f1f5f9;">
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">命令</th>
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">作用</th>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git remote add</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">添加远程仓库</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git push</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">推送到远程</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git pull</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">从远程拉取</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><code>git clone</code></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">克隆仓库</td>
+        </tr>
+      </table>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="remote">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="04-branch.html">← 上一章：分支管理</a>
+      <a href="06-conflict.html">下一章：解决冲突 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

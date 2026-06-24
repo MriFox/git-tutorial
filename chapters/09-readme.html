@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README与LICENSE - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>9. README与LICENSE</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">📖</span>
+        <div>好的项目需要好的"门面"，README就是项目的"说明书"！</div>
+      </div>
+      
+      <h2>README.md</h2>
+      <p>README是项目的说明文件，通常包含：</p>
+      
+      <ul>
+        <li><strong>项目名称和简介</strong> - 这个项目是做什么的</li>
+        <li><strong>安装方法</strong> - 如何使用这个项目</li>
+        <li><strong>使用示例</strong> - 展示项目功能</li>
+        <li><strong>贡献指南</strong> - 如何参与项目开发</li>
+      </ul>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 项目名称
+
+## 简介
+这是一个xxx项目
+
+## 安装
+```bash
+npm install
+```
+
+## 使用
+```bash
+npm start
+```</code></pre>
+      </div>
+      
+      <h2>LICENSE文件</h2>
+      <p>LICENSE是开源协议，规定别人可以怎么使用你的代码。</p>
+      
+      <table style="width:100%; border-collapse:collapse; margin:20px 0;">
+        <tr style="background:#f1f5f9;">
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">协议</th>
+          <th style="padding:12px; border:1px solid #e2e8f0; text-align:left;">特点</th>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>MIT</strong></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">最宽松，可商用</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>Apache 2.0</strong></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">宽松，需保留版权</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid #e2e8f0;"><strong>GPL</strong></td>
+          <td style="padding:12px; border:1px solid #e2e8f0;">严格，衍生项目也必须开源</td>
+        </tr>
+      </table>
+      
+      <div class="tip">
+        💡 不知道选哪个？MIT协议是目前最流行的选择！
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="readme">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="08-github-intro.html">← 上一章：GitHub入门</a>
+      <a href="10-issue.html">下一章：Issue管理 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

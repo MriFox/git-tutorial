@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>撤销操作 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content">
+      <h1>7. 撤销操作</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">⏪</span>
+        <div>改错了？没关系！Git提供了多种"后悔药"帮你撤销操作。</div>
+      </div>
+      
+      <h2>撤销工作区修改</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 撤销单个文件的修改
+git checkout -- filename.txt
+
+# 撤销所有修改（慎用！）
+git checkout -- .</code></pre>
+      </div>
+      
+      <h2>撤销暂存</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 把文件从暂存区移回工作区
+git reset HEAD filename.txt</code></pre>
+      </div>
+      
+      <h2>回退提交</h2>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 回退到上一个提交（保留修改在工作区）
+git reset --soft HEAD~1
+
+# 回退并撤销修改（不保留修改）
+git reset --hard HEAD~1
+
+# 回退到指定提交
+git reset --hard commit-id</code></pre>
+      </div>
+      
+      <div class="warning">
+        ⚠️ <code>git reset --hard</code> 会丢失修改，操作前请确认！
+      </div>
+      
+      <h2>暂存工作</h2>
+      <p>临时保存当前修改，去做别的事：</p>
+      
+      <div class="code-demo">
+        <div class="header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code># 保存当前修改
+git stash
+
+# 查看保存列表
+git stash list
+
+# 恢复最近保存
+git stash pop
+
+# 删除保存
+git stash drop</code></pre>
+      </div>
+      
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="mark-completed" data-chapter="undo">
+        <label for="mark-completed">我已完成本章学习</label>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="06-conflict.html">← 上一章：解决冲突</a>
+      <a href="08-github-intro.html">下一章：GitHub入门 →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

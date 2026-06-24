@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毕业考试 - Git & GitHub 教程</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Git & GitHub 教程</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#chapters">教程目录</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <main class="container">
+    <div class="content exam-container">
+      <h1>🎓 Git & GitHub 毕业考试</h1>
+      
+      <div class="fun-fact">
+        <span class="emoji">📝</span>
+        <div>满分100分，90分以上即可获得毕业证书！共20道题，判断题10道（每题3分），应用题10道（每题7分）。每次考试随机抽取一套试卷！</div>
+      </div>
+
+      <div id="exam-info" style="text-align: center; margin: 20px 0; padding: 16px; background: #f1f5f9; border-radius: 8px;">
+        <p>当前试卷：<strong id="paper-id">加载中...</strong></p>
+        <p style="font-size: 0.9rem; color: #64748b;">共 <strong>5</strong> 套试卷，随机抽取</p>
+      </div>
+      
+      <div id="exam-form"></div>
+
+      <div id="exam-result" style="display: none;"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Git & GitHub 教程 | 帮助新手掌握版本控制</p>
+    </div>
+  </footer>
+
+  <script>
+    const examPapers = [
+      // 试卷1
+      {
+        id: 1,
+        judges: [
+          { q: "Git是一个版本控制系统", a: true },
+          { q: "git init命令用于克隆远程仓库", a: false },
+          { q: "commit是保存代码修改的操作", a: true },
+          { q: "git push用于从远程拉取代码", a: false },
+          { q: "分支可以让你并行开发多个功能", a: true },
+          { q: "GitHub只能托管公开仓库", a: false },
+          { q: "git add .会添加所有修改到暂存区", a: true },
+          { q: "merge conflict需要手动解决", a: true },
+          { q: "README文件是必须的", a: false },
+          { q: "Fork会修改原项目", a: false }
+        ],
+        applies: [
+          { q: "你想把本地代码推送到GitHub，应该使用什么命令？", opts: ["git pull", "git push", "git clone"], a: 1 },
+          { q: "你想创建一个新分支，应该使用什么命令？", opts: ["git branch feature", "git checkout feature", "git merge feature"], a: 0 },
+          { q: "你想查看当前仓库的状态，应该使用什么命令？", opts: ["git status", "git log", "git diff"], a: 0 },
+          { q: "你想把文件添加到暂存区，应该使用什么命令？", opts: ["git commit", "git add", "git push"], a: 1 },
+          { q: "你想下载别人的仓库到本地，应该使用什么命令？", opts: ["git clone", "git pull", "git fetch"], a: 0 },
+          { q: "你想查看提交历史，应该使用什么命令？", opts: ["git status", "git log", "git diff"], a: 1 },
+          { q: "你想合并分支，应该使用什么命令？", opts: ["git merge", "git branch", "git checkout"], a: 0 },
+          { q: "你想撤销工作区的修改，应该使用什么命令？", opts: ["git reset", "git checkout --", "git stash"], a: 1 },
+          { q: "你想临时保存当前修改，应该使用什么命令？", opts: ["git stash", "git commit", "git save"], a: 0 },
+          { q: "你想删除分支，应该使用什么命令？", opts: ["git delete branch", "git branch -d", "git remove"], a: 1 }
+        ]
+      },
+      // 试卷2
+      {
+        id: 2,
+        judges: [
+          { q: "git clone会创建一个远程仓库的副本", a: true },
+          { q: "main是Git默认的主分支名", a: true },
+          { q: "git pull等于git fetch + git merge", a: true },
+          { q: "GitHub Pages只能部署HTML网站", a: false },
+          { q: "Issue可以用来追踪bug", a: true },
+          { q: "PR是Pull Request的缩写", a: true },
+          { q: "git reset --hard会保留修改", a: false },
+          { q: "开源协议是可选的", a: true },
+          { q: "Fork后可以直接修改原项目", a: false },
+          { q: "git log --oneline可以简洁显示历史", a: true }
+        ],
+        applies: [
+          { q: "你想把远程仓库的代码拉取到本地，应该使用什么命令？", opts: ["git push", "git pull", "git clone"], a: 1 },
+          { q: "你想切换到另一个分支，应该使用什么命令？", opts: ["git switch branch-name", "git checkout branch-name", "git merge branch-name"], a: 1 },
+          { q: "你想初始化一个新的Git仓库，应该使用什么命令？", opts: ["git init", "git create", "git new"], a: 0 },
+          { q: "你想提交代码并添加描述，应该使用什么命令？", opts: ["git add -m '描述'", "git commit -m '描述'", "git push -m '描述'"], a: 1 },
+          { q: "你想查看文件的修改差异，应该使用什么命令？", opts: ["git diff", "git status", "git log"], a: 0 },
+          { q: "你想添加远程仓库，应该使用什么命令？", opts: ["git remote add origin url", "git add remote url", "git clone url"], a: 0 },
+          { q: "你想回退到上一个提交，应该使用什么命令？", opts: ["git reset --hard HEAD~1", "git undo", "git revert HEAD"], a: 0 },
+          { q: "你想创建并切换到新分支，应该使用什么命令？", opts: ["git checkout -b new-branch", "git branch new-branch", "git switch new-branch"], a: 0 },
+          { q: "你想删除已合并的分支，应该使用什么命令？", opts: ["git branch -D name", "git branch -d name", "git delete branch name"], a: 1 },
+          { q: "你想设置Git的用户名，应该使用什么命令？", opts: ["git config user.name '名字'", "git set user.name '名字'", "git name '名字'"], a: 0 }
+        ]
+      },
+      // 试卷3
+      {
+        id: 3,
+        judges: [
+          { q: "Git只能在命令行使用", a: false },
+          { q: "暂存区是准备提交的文件区域", a: true },
+          { q: "git status可以查看修改状态", a: true },
+          { q: "GitHub是免费的代码托管平台", a: true },
+          { q: "分支合并一定会产生冲突", a: false },
+          { q: "git stash可以临时保存修改", a: true },
+          { q: "README通常用Markdown格式编写", a: true },
+          { q: "MIT是最宽松的开源协议", a: true },
+          { q: "git fetch会自动合并代码", a: false },
+          { q: "PR需要经过代码审查才能合并", a: true }
+        ],
+        applies: [
+          { q: "你想查看所有分支，应该使用什么命令？", opts: ["git branch", "git list", "git show"], a: 0 },
+          { q: "你想恢复暂存的修改，应该使用什么命令？", opts: ["git stash pop", "git stash apply", "git stash list"], a: 0 },
+          { q: "你想强制删除分支，应该使用什么命令？", opts: ["git branch -d", "git branch -D", "git branch --delete"], a: 1 },
+          { q: "你想查看远程仓库地址，应该使用什么命令？", opts: ["git remote -v", "git remote list", "git remote show"], a: 0 },
+          { q: "你想把暂存区的文件移回工作区，应该使用什么命令？", opts: ["git reset HEAD file", "git unstage file", "git remove file"], a: 0 },
+          { q: "你想只下载远程更新不合并，应该使用什么命令？", opts: ["git pull", "git fetch", "git clone"], a: 1 },
+          { q: "你想初始化仓库，应该使用什么命令？", opts: ["git init", "git create", "git new"], a: 0 },
+          { q: "你想添加所有修改，应该使用什么命令？", opts: ["git add .", "git add *", "git add all"], a: 0 },
+          { q: "你想查看提交历史（单行显示），应该使用什么命令？", opts: ["git log", "git log --oneline", "git log -1"], a: 1 },
+          { q: "你想创建远程仓库，应该在哪里操作？", opts: ["本地终端", "GitHub网站", "Git Bash"], a: 1 }
+        ]
+      },
+      // 试卷4
+      {
+        id: 4,
+        judges: [
+          { q: "Git是分布式版本控制系统", a: true },
+          { q: "git commit需要网络连接", a: false },
+          { q: "origin是远程仓库的默认别名", a: true },
+          { q: "Pull Request是GitHub的功能", a: true },
+          { q: "git log可以查看修改历史", a: true },
+          { q: "Fork会创建仓库的副本", a: true },
+          { q: "Issue只能用于报告bug", a: false },
+          { q: "git stash可以保存工作进度", a: true },
+          { q: "GitHub Pages需要付费", a: false },
+          { q: "git diff可以查看修改差异", a: true }
+        ],
+        applies: [
+          { q: "你想推送到远程仓库，应该使用什么命令？", opts: ["git push", "git pull", "git send"], a: 0 },
+          { q: "你想查看文件差异，应该使用什么命令？", opts: ["git diff", "git status", "git compare"], a: 0 },
+          { q: "你想添加远程仓库，应该使用什么命令？", opts: ["git remote add name url", "git add remote url", "git connect url"], a: 0 },
+          { q: "你想回退到指定提交，应该使用什么命令？", opts: ["git reset --hard commit-id", "git revert commit-id", "git undo commit-id"], a: 0 },
+          { q: "你想查看提交历史（详细），应该使用什么命令？", opts: ["git log", "git history", "git show"], a: 0 },
+          { q: "你想切换分支，应该使用什么命令？", opts: ["git checkout branch", "git switch branch", "git change branch"], a: 1 },
+          { q: "你想查看远程仓库信息，应该使用什么命令？", opts: ["git remote -v", "git remote info", "git remote show"], a: 0 },
+          { q: "你想克隆仓库，应该使用什么命令？", opts: ["git clone url", "git download url", "git get url"], a: 0 },
+          { q: "你想删除远程分支，应该使用什么命令？", opts: ["git push origin --delete branch", "git remote delete branch", "git branch -d origin/branch"], a: 0 },
+          { q: "你想查看当前分支，应该使用什么命令？", opts: ["git branch", "git status", "git log"], a: 0 }
+        ]
+      },
+      // 试卷5
+      {
+        id: 5,
+        judges: [
+          { q: "git add会提交代码", a: false },
+          { q: "分支是平行的开发线路", a: true },
+          { q: "GitHub提供Issue管理功能", a: true },
+          { q: "git pull会下载并合并代码", a: true },
+          { q: "README是项目说明文件", a: true },
+          { q: "git log --oneline只能看一条记录", a: false },
+          { q: "开源协议规定代码使用方式", a: true },
+          { q: "Fork后需要创建PR才能贡献", a: true },
+          { q: "git reset --hard是最安全的撤销方式", a: false },
+          { q: "Git是分布式版本控制系统", a: true }
+        ],
+        applies: [
+          { q: "你想创建分支，应该使用什么命令？", opts: ["git branch name", "git create branch name", "git new branch name"], a: 0 },
+          { q: "你想合并分支，应该使用什么命令？", opts: ["git merge branch", "git join branch", "git combine branch"], a: 0 },
+          { q: "你想查看状态，应该使用什么命令？", opts: ["git status", "git state", "git info"], a: 0 },
+          { q: "你想添加文件到暂存区，应该使用什么命令？", opts: ["git add file", "git stage file", "git save file"], a: 0 },
+          { q: "你想提交代码，应该使用什么命令？", opts: ["git commit -m 'desc'", "git save -m 'desc'", "git push -m 'desc'"], a: 0 },
+          { q: "你想查看版本历史，应该使用什么命令？", opts: ["git log", "git history", "git versions"], a: 0 },
+          { q: "你想克隆远程仓库，应该使用什么命令？", opts: ["git clone url", "git copy url", "git download url"], a: 0 },
+          { q: "你想推送代码，应该使用什么命令？", opts: ["git push", "git upload", "git send"], a: 0 },
+          { q: "你想拉取代码，应该使用什么命令？", opts: ["git pull", "git fetch", "git download"], a: 0 },
+          { q: "你想初始化仓库，应该使用什么命令？", opts: ["git init", "git start", "git create"], a: 0 }
+        ]
+      }
+    ];
+
+    let currentPaper;
+    function selectRandomPaper() {
+      const randomIndex = Math.floor(Math.random() * examPapers.length);
+      currentPaper = examPapers[randomIndex];
+      document.getElementById('paper-id').textContent = `试卷 ${currentPaper.id}（共${examPapers.length}套）`;
+    }
+
+    function renderExam() {
+      selectRandomPaper();
+      const form = document.getElementById('exam-form');
+      let html = '<h2>一、判断题（每题3分，共30分）</h2>';
+      
+      currentPaper.judges.forEach((item, index) => {
+        html += `
+          <div class="question-card">
+            <span class="question-type judge">判断题</span>
+            <h3>${index + 1}. ${item.q}</h3>
+            <div class="options">
+              <label><input type="radio" name="j${index}" value="true"> 正确</label>
+              <label><input type="radio" name="j${index}" value="false"> 错误</label>
+            </div>
+          </div>
+        `;
+      });
+
+      html += '<h2>二、应用题（每题7分，共70分）</h2>';
+      
+      currentPaper.applies.forEach((item, index) => {
+        html += `
+          <div class="question-card">
+            <span class="question-type apply">应用题</span>
+            <h3>${index + 11}. ${item.q}</h3>
+            <div class="options">
+              ${item.opts.map((opt, optIndex) => `
+                <label><input type="radio" name="a${index}" value="${optIndex}"> ${opt}</label>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+        <div style="text-align: center; margin: 40px 0;">
+          <button type="button" class="btn" onclick="submitExam()" style="padding: 16px 48px; font-size: 1.1rem;">
+            提交试卷
+          </button>
+        </div>
+      `;
+
+      form.innerHTML = html;
+    }
+
+    function submitExam() {
+      let score = 0;
+      
+      for (let i = 0; i < 10; i++) {
+        const selected = document.querySelector(`input[name="j${i}"]:checked`);
+        if (!selected) {
+          alert(`请完成第 ${i + 1} 题！`);
+          return;
+        }
+        const userAnswer = selected.value === 'true';
+        if (userAnswer === currentPaper.judges[i].a) {
+          score += 3;
+        }
+      }
+
+      for (let i = 0; i < 10; i++) {
+        const selected = document.querySelector(`input[name="a${i}"]:checked`);
+        if (!selected) {
+          alert(`请完成第 ${i + 11} 题！`);
+          return;
+        }
+        if (parseInt(selected.value) === currentPaper.applies[i].a) {
+          score += 7;
+        }
+      }
+
+      const resultDiv = document.getElementById('exam-result');
+      const formDiv = document.getElementById('exam-form');
+      
+      formDiv.style.display = 'none';
+      document.getElementById('exam-info').style.display = 'none';
+      resultDiv.style.display = 'block';
+
+      const passed = score >= 90;
+      const currentDate = new Date().toLocaleDateString('zh-CN');
+      
+      if (passed) {
+        resultDiv.innerHTML = `
+          <div class="score-display">
+            <h2>🎉 恭喜你通过考试！</h2>
+            <h1>${score} 分</h1>
+            <p>你已获得毕业资格！</p>
+            <a href="16-certificate.html?score=${score}&date=${encodeURIComponent(currentDate)}" class="btn" style="background: white; color: #f97316; margin-top: 20px;">
+              🎓 查看毕业证书
+            </a>
+          </div>
+        `;
+      } else {
+        resultDiv.innerHTML = `
+          <div class="score-display" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+            <h2>😢 很遗憾，未达到毕业标准</h2>
+            <h1>${score} 分</h1>
+            <p>需要90分以上才能获得毕业证书</p>
+            <p style="margin-top: 12px;">建议复习后重新考试，下次会随机抽取不同的试卷！</p>
+            <button onclick="location.reload()" class="btn" style="background: white; color: #ef4444; margin-top: 20px;">
+              🔄 重新考试
+            </button>
+          </div>
+        `;
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    renderExam();
+  </script>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
