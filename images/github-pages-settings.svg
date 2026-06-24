@@ -1,0 +1,35 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f6f8fa"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect width="600" height="50" fill="#24292f"/>
+  <text x="20" y="32" fill="white" font-size="16" font-weight="bold">GitHub</text>
+  
+  <!-- 左侧菜单 -->
+  <rect x="0" y="50" width="180" height="350" fill="#f6f8fa"/>
+  <rect x="0" y="50" width="180" height="35" fill="#e1e4e8"/>
+  <text x="20" y="73" fill="#24292f" font-size="13">代码</text>
+  <text x="20" y="105" fill="#24292f" font-size="13">Issues</text>
+  <text x="20" y="135" fill="#24292f" font-size="13">Pull requests</text>
+  <text x="20" y="165" fill="#24292f" font-size="13">Actions</text>
+  <text x="20" y="200" fill="#0969da" font-size="13" font-weight="bold">Settings</text>
+  
+  <!-- 右侧内容 -->
+  <rect x="200" y="60" width="380" height="320" fill="white" rx="6"/>
+  
+  <!-- Settings标题 -->
+  <text x="220" y="90" fill="#24292f" font-size="18" font-weight="bold">设置</text>
+  
+  <!-- Pages选项 -->
+  <rect x="220" y="200" width="340" height="50" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
+  <text x="240" y="230" fill="#24292f" font-size="14">Pages</text>
+  <text x="240" y="245" fill="#8b949e" font-size="11">配置GitHub Pages</text>
+  
+  <!-- 箭头指向 -->
+  <path d="M 580 225 L 570 225 L 570 215 L 575 215 L 575 205 L 585 225 L 575 245 L 575 235 L 570 235 L 570 225" fill="#0969da" transform="rotate(0)"/>
+  <text x="540" y="210" fill="#0969da" font-size="12" font-weight="bold">点击这里</text>
+  
+  <!-- 选中框 -->
+  <rect x="215" y="195" width="350" height="60" fill="none" stroke="#0969da" stroke-width="2" rx="6" stroke-dasharray="5,5"/>
+</svg>

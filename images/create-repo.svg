@@ -1,0 +1,31 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f6f8fa"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect width="600" height="50" fill="#24292f"/>
+  <text x="20" y="32" fill="white" font-size="16" font-weight="bold">GitHub</text>
+  <text x="150" y="32" fill="#8b949e" font-size="14">首页</text>
+  <text x="200" y="32" fill="#8b949e" font-size="14">仓库</text>
+  <text x="250" y="32" fill="#8b949e" font-size="14">问题</text>
+  <circle cx="560" cy="25" r="15" fill="#8b949e"/>
+  
+  <!-- 主内容区 -->
+  <rect x="20" y="70" width="560" height="310" fill="white" rx="6"/>
+  
+  <!-- 标题 -->
+  <text x="40" y="100" fill="#24292f" font-size="20" font-weight="bold">创建新仓库</text>
+  
+  <!-- 表单 -->
+  <text x="40" y="140" fill="#24292f" font-size="14">仓库名称</text>
+  <rect x="40" y="150" width="300" height="35" fill="white" stroke="#d0d7de" rx="4"/>
+  <text x="50" y="172" fill="#8b949e" font-size="12">my-project</text>
+  
+  <!-- 绿色按钮 -->
+  <rect x="40" y="320" width="150" height="40" fill="#2da44e" rx="6"/>
+  <text x="70" y="345" fill="white" font-size="14" font-weight="bold">创建仓库</text>
+  
+  <!-- 选中框 -->
+  <rect x="30" y="60" width="540" height="320" fill="none" stroke="#0969da" stroke-width="2" rx="6" stroke-dasharray="5,5"/>
+  <text x="540" y="55" fill="#0969da" font-size="12">点击这里</text>
+</svg>
